@@ -30,6 +30,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
 
 # Kernel
+
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31
@@ -39,7 +40,16 @@ TARGET_KERNEL_SOURCE := kernel/htc/m7
 
 #Build with GCC 4.6
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
-TARGET_GCC_VERSION := 4.6
+TARGET_GCC_VERSION := 4.8
+
+#Tune for cortex-a15
+TARGET_EXTRA_CFLAGS := -mtune=cortex-a15 -mcpu=cortex-a9
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DNEW_ION_API=1

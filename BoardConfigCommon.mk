@@ -38,11 +38,13 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 TARGET_KERNEL_CONFIG := cyanogenmod_m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 
-#Build with GCC 4.6
+# Build with arm-eabi-4.6 for kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
+
+# Build with arm-linux-androideabi-4.8 for camera
 TARGET_GCC_VERSION := 4.8
 
-#Tune for cortex-a15
+# Tune for cortex-a15
 TARGET_EXTRA_CFLAGS := -mtune=cortex-a15 -mcpu=cortex-a9
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi

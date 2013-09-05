@@ -30,7 +30,6 @@
 TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
 
 # Kernel
-
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31
@@ -39,10 +38,10 @@ TARGET_KERNEL_CONFIG := cyanogenmod_m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 
 # Build with arm-eabi-4.6 for kernel
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
+TARGET_KERNEL_CUSTOM_LINARO_TOOLCHAIN := arm-eabi-4.6/bin/arm-eabi-
 
-# Build with arm-linux-androideabi-4.8 for camera
-TARGET_GCC_VERSION := 4.8
+# Build with arm-linux-androideabi-4.9 for camera
+TARGET_GCC_VERSION := 4.9
 
 # Tune for cortex-a15
 TARGET_EXTRA_CFLAGS := -mtune=cortex-a15 -mcpu=cortex-a9
